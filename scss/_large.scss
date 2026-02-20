@@ -1,0 +1,28 @@
+header, nav, main, footer {
+        max-width: 60rem;
+        border: 1px;
+        margin: auto;
+}
+
+/* Ensure header sits above the floating pill to avoid logo overlap */
+header {
+    position: relative;
+    z-index: 110;
+}
+
+/* Larger-screen adjustments for glass nav */
+.glass-nav {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    /* place nav below header using a variable with sensible fallback */
+    top: calc(var(--header-height, 4.25rem) + 0.5rem);
+    width: min(720px, 82%);
+    z-index: 90;
+
+    ul { gap: 1.25rem; }
+
+    a { font-size: 0.95rem; padding: 6px 8px; }
+
+    li.active { padding: 4px; }
+}

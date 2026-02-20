@@ -1,0 +1,230 @@
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $fontColor;
+}
+
+#headerWrapper {
+    background-color: #abc;
+    color: $secondaryColor;
+}
+
+header {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem $gutter;
+    gap: 8px;
+
+    h1 {
+        margin: 0;
+        font-size: 1.2rems;
+        font-weight: $normalWeight;
+    }
+}
+
+#navWrapper {
+    background-color: #def;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+            flex: 1;
+        }
+    }
+
+    li.active {
+        background-color: beige;
+    }
+
+    a {
+        display: block;
+        padding: 0.75rem;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            color: red
+        }
+    }
+}
+
+// being the footer 
+
+#footerWrapper {
+    background-color: #abc;
+}
+footer {
+    padding: 0.5rem $gutter;
+    p{
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+}
+
+/* Glassmorphism pill navigation - mobile / small screens (smaller sizes) */
+.glass-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0.35rem;
+    margin: 0.5rem auto 0.25rem;
+    width: calc(100% - 2rem);
+    max-width: 680px;
+    border-radius: 50px;
+    background: rgba(10,10,12,0.4);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.28);
+    z-index: 50;
+
+    ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0 0.4rem;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        padding: 6px 8px;
+        color: #dfe7ea;
+        text-decoration: none;
+        font-size: 0.8rem;
+        line-height: 1;
+        transition: transform 140ms ease, color 140ms ease;
+    }
+
+    .icon { 
+        display: block;
+        width: 22px; height: 22px; 
+        stroke: #a6ff00; 
+        fill: transparent;
+    }
+
+    /* Active item: glowing aurora radial gradient, dark text/icons for contrast */
+    li.active a {
+        color: #061018; /* dark text for contrast */
+        transform: translateY(-1px);
+    }
+
+    li.active {
+        background: radial-gradient(110% 70% at 35% 30%, rgba(166,255,0,0.18), rgba(255,190,120,0.10));
+        border-radius: 999px;
+        padding: 3px;
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 5px 14px rgba(166,255,0,0.05), inset 0 -4px 12px rgba(255,190,120,0.02);
+    }
+
+    li.active .icon{ stroke: #061018; }
+    li.active .label{ color:#061018; }
+}
+
+/* add a small top offset on small screens so nav does not visually collide with header */
+body {
+    --header-height: 4rem; /* used as fallback for large nav positioning */
+}
+/* Glassmorphism pill navigation - mobile / small screens */
+.glass-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0.75rem auto;
+    width: calc(100% - 2rem);
+    max-width: 980px;
+    border-radius: 50px;
+    background: rgba(10,10,12,0.45);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(2,6,23,0.35);
+    z-index: 50;
+
+    ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0 0.5rem;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 10px;
+        color: #dfe7ea;
+        text-decoration: none;
+        font-size: 0.85rem;
+        line-height: 1;
+        transition: transform 160ms ease, color 160ms ease;
+    }
+
+    .icon { 
+        display: block;
+        width: 28px; height: 28px; 
+        stroke: #a6ff00; 
+        fill: transparent;
+    }
+
+    /* Active item: glowing aurora radial gradient, dark text/icons for contrast */
+    li.active a {
+        color: #061018; /* dark text for contrast */
+        transform: translateY(-2px);
+    }
+
+    li.active {
+        background: radial-gradient(120% 80% at 30% 30%, rgba(166,255,0,0.22), rgba(255,190,120,0.12));
+        border-radius: 999px;
+        padding: 4px;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 6px 18px rgba(166,255,0,0.06), inset 0 -6px 18px rgba(255,190,120,0.03);
+    }
+
+    li.active .icon{ stroke: #061018; }
+    li.active .label{ color:#061018; }
+}
