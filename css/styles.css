@@ -499,4 +499,45 @@ body {
   .glass-nav li.active {
     padding: 4px;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+}
+
+.video-player video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dual-captions {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  width: min(92%, 54rem);
+  text-align: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.caption-line {
+  margin: 0.25rem 0;
+  padding: 0.35rem 0.6rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 0.3rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  line-height: 1.35;
+}
+
+.caption-en {
+  margin-bottom: 0.35rem;
+}
+
+.caption-es {
+  margin-top: 0;
+}
+/*# sourceMappingURL=styles.css.map */
