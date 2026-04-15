@@ -54,9 +54,9 @@ async function enableDualCaptions() {
     return;
   }
 
-  // Disable native text tracks so only the custom dual-language overlay shows.
+  // Change 'disabled' to 'hidden' to allow JS to read cues without showing native boxes
   for (const track of video.textTracks) {
-    track.mode = 'disabled';
+    track.mode = 'hidden';
   }
 
   try {
