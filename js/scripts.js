@@ -61,8 +61,8 @@ async function enableDualCaptions() {
 
   try {
     const [enResponse, esResponse] = await Promise.all([
-      fetch('video/main-video.en.vtt'),
-      fetch('video/main-video.es.vtt')
+      fetch('media/main-video.en.vtt'),
+      fetch('media/main-video.es.vtt')
     ]);
 
     const [enVtt, esVtt] = await Promise.all([enResponse.text(), esResponse.text()]);
